@@ -1,0 +1,32 @@
+.alert_box {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+#alert {
+  position: relative;
+  border: none;
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 15px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.25s;
+  background-color: red;
+  color: white;
+  margin: auto;
+}
+
+.video_box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+
+#my_video {
+  margin: auto;
+}

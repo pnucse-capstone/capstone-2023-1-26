@@ -1,0 +1,37 @@
+.bus {
+  border: none;
+  display: inline-block;
+  padding: 15px 30px;
+  border-radius: 15px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  transition: 0.25s;
+  margin: auto;
+  text-decoration-line: none;
+  color: black;
+}
+
+.bus_box {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+#clicked {
+  background-color: gray;
+  opacity: 50%;
+}
+
+@keyframes blink-effect {
+  50% {
+    opacity: 0;
+  }
+}
+
+.blink {
+  animation: blink-effect 1s step-end infinite;
+  background-color: #ff6347;
+}

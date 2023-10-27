@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEAM HKH</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.20.1/video-js.min.css"
+      integrity="sha512-D/n19dhr+LY8HOoGuybX+bJYsZOFKb0r7YpAWBMPg5Hnke6lxdHl6q21d7qiwIsMgdSnBG9pSMQlwTtZ+6ISmw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.20.1/video.min.js"
+      integrity="sha512-xT61DWoPRoAa4ir+LqER5L4/zzuO5tQOQywZYqU8BaZVqolq78bRobozDxozcCZ6tmo92zetGVQHRp+sQHIi/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/video.css" />
+    <link rel="stylesheet" href="../css/bus.css" />
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <div class="header">
+      <p id="name">TEAM HKH</p>
+      <div class="link">
+        <a href="/" id="user"> 승객 </a>
+        <a href="/admin" id="admin"> 관리자 </a>
+      </div>
+    </div>
+
+    <!-- 비디오 영상 -->
+    <div class="video_box">
+      <video
+        id="my_video"
+        class="video-js"
+        controls
+        width="800"
+        height="500"
+        muted="muted"
+      >
+        <source
+          src="https://traffic-inf.s3.ap-northeast-2.amazonaws.com/video/index.m3u8"
+          type="application/x-mpegURL"
+        />
+      </video>
+    </div>
+
+    <!-- 신고 버튼 -->
+    <div class="alert_box">
+      <button id="alert" onclick="clickEvent()">신고하기</button>
+    </div>
+
+    <!-- 버스 버튼 -->
+    <div class="bus_box">
+      <a class="bus" href="/admin/bus1">100-1</a>
+      <a class="bus" href="/admin/bus2">111-1</a>
+      <a class="bus" href="/admin/bus3">200</a>
+      <a class="bus" href="/admin/bus4" id="clicked">77</a>
+    </div>
+
+    <script src="../js/video.js"></script>
+    <script src="../js/admin.js"></script>
+  </body>
+</html>

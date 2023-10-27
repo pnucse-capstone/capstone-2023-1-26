@@ -1,0 +1,20 @@
+.data_box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+.data {
+  margin: auto;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+#temp {
+  color: orange;
+}
+
+#chart {
+  margin: auto;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEAM HKH</title>
+
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/bus.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <div class="header">
+      <p id="name">TEAM HKH</p>
+      <div class="link">
+        <a href="/" id="user"> 승객 </a>
+        <a href="/admin" id="admin"> 관리자 </a>
+      </div>
+    </div>
+
+    <!-- 대시보드 -->
+    <div class="data_box">
+      <span class="data">혼잡도</span>
+      <span class="data">인원수</span>
+    </div>
+    <!-- 버스 버튼 -->
+    <div class="bus_box">
+      <a class="bus" href="/bus1">100-1</a>
+      <a class="bus" href="/bus2">111-1</a>
+      <a class="bus" href="/bus3">200</a>
+      <a class="bus" href="/bus4" id="clicked">77</a>
+    </div>
+
+    <script type="module" src="../user.js"></script>
+  </body>
+</html>

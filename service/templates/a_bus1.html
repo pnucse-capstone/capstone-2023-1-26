@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TEAM HKH</title>
+
+    <link rel="stylesheet" href="../static/header.css" />
+    <link rel="stylesheet" href="../static/video.css" />
+    <link rel="stylesheet" href="../static/bus.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous">
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.20.1/video-js.min.css"
+      integrity="sha512-D/n19dhr+LY8HOoGuybX+bJYsZOFKb0r7YpAWBMPg5Hnke6lxdHl6q21d7qiwIsMgdSnBG9pSMQlwTtZ+6ISmw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.20.1/video.min.js"
+      integrity="sha512-xT61DWoPRoAa4ir+LqER5L4/zzuO5tQOQywZYqU8BaZVqolq78bRobozDxozcCZ6tmo92zetGVQHRp+sQHIi/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+    
+  </head>
+  <body>
+    <!-- 헤더 -->
+    <div class="header">
+      <p id="name">TEAM HKH</p>
+      <div class="link">
+        <a href="/" id="user"> 승객 </a>
+        <a href="/admin" id="admin"> 관리자 </a>
+      </div>
+    </div>
+
+    <!-- 비디오 영상 -->
+    <div class="video_box">
+      <video id="my_video" class="video-js" controls width="800" height="500" muted ="muted">
+        <source src="https://traffic-inf.s3.ap-northeast-2.amazonaws.com/101/0/index.m3u8" type="application/x-mpegURL">
+      </video>
+    
+      <script>
+        var player = videojs('my_video');
+        player.play();
+      </script>
+  </div>
+
+
+
+    <div class="data_box">
+      <span class="data" id="add1">{{ text }}</span>
+    </div>
+
+    <!-- 신고 버튼 -->
+    <div class="alert_box">
+      <button id="alert" onclick="clickEvent()">신고하기</button>
+    </div>
+
+
+    <!-- 버스 버튼 -->
+    <div class="bus_box">
+      <a class="bus" href="/admin/bus1" id="b1">100-1</a>
+      <a class="bus" href="/admin/bus2">111-1</a>
+      <a class="bus" href="/admin/bus3">200</a>
+      <a class="bus" href="/admin/bus4">77</a>
+    </div>
+
+    <script src="../static/video.js"></script>
+    <!-- <script src="../static/admin.js"></script> -->
+    <script src="{% static 'add.js' %}"></script>
+  </body>
+</html>
