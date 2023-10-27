@@ -74,7 +74,7 @@ def helloword6(self, params, packet):
 
 myMQTTClinet = AWSIoTMQTTClient("MyTest")
 myMQTTClinet.configureEndpoint("a34lkk6u0zedod-ats.iot.ap-northeast-2.amazonaws.com", 8883)
-myMQTTClinet.configureCredentials("C:/Users/jeongho/certs/Amazon-root-CA-1.pem", "C:/Users/jeongho/certs/private.pem.key", "C:/Users/jeongho/certs/device.pem.crt")
+myMQTTClinet.configureCredentials("C:/Users/KMW/Desktop/iot/Amazon-root-CA-1.pem", "C:/Users/KMW/Desktop/iot/private.pem.key", "C:/Users/KMW/Desktop/iot/device.pem.crt")
 myMQTTClinet.configureOfflinePublishQueueing(-1)
 myMQTTClinet.configureDrainingFrequency(2)
 myMQTTClinet.configureConnectDisconnectTimeout(10)
