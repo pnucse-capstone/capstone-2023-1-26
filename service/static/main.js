@@ -58,7 +58,7 @@ socket.onmessage = function(e) {
 
     let newGraphData = graphData.data.datasets[0].data;
     if (newGraphData.length == 13) {
-        myChart.destroy();
+        // myChart.destroy();
         if (last == "bus2") {
             graphData.data.datasets[0].data = [djangoData.value2];
         } else {

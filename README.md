@@ -54,11 +54,47 @@ $ pip install -r requirement.txt
 ```
 
 ## 실행 방법
+### 버스 내부 영상 승/하차 인원 측정 및 사고 추적 
+
+#### 설정
 ```python
+$ cd service/myyl/people_detect_in_bus
+$ touch .env
+$ vi .env
+
+$ HLSPATH = "your_local_hls_path/hls"
+ACCESS_KEY_ID = 'your_IAM_key_ID' #s3 관련 권한을 가진 IAM계정 정보
+ACCESS_SECRET_KEY = 'your_IAM_secret_key'
+ENDPOINT = "your_iot_endpoint to publish"
+PATH_TO_AMAZON_ROOT_CA_1 = "your_Amazon-Root-CA1.pem"
+PATH_TO_PRIVATE_KEY = "your_private.pem.key"
+PATH_TO_CERTIFICATE = "your_device.pem.crt" 
+BUSNUM = 101 (bus num you interest)
+```
+
+#### 실행
+```python
+$ cd service/myyl/people_detect_in_bus
 1. RTSP
-python track.py --source rtsp:your_rtsp_address
-2. .mp4
-python track.py --source video.mp4
+$ python track.py --source rtsp:your_rtsp_address
+2. *.mp4
+$ python track.py --source video.mp4
+```
+### 모니터링 서비스  
+
+#### 설정
+```python
+$ cd service/myyl
+$ vi iot.py 
+$ myMQTTClinet = AWSIoTMQTTClient("your_client_name")
+$ myMQTTClinet.configureEndpoint("your_aws_iot_endpoint", 8883)
+$ myMQTTClinet.configureCredentials("your_Amazon-Root-CA1.pem", "your_private.pem.key", "your_device.pem.crt")
+```  
+
+#### 실행
+```python
+$ cd service
+$ python manage.py runserver
 ```
 
 ### GPU 사용 방법
@@ -67,10 +103,13 @@ python track.py --source video.mp4
 
 이후 실행
 ```python
+$ cd service/myyl/people_detect_in_bus
+```
+```python
 1. RTSP
-python track.py --source rtsp:your_rtsp_address --device deviceNum
-2. .mp4
-python track.py --source video.mp4 --device deviceNum
+$ python track.py --source rtsp:your_rtsp_address --device deviceNum
+2. *.mp4
+$ python track.py --source video.mp4 --device deviceNum
 ```
 
 ### 예상 문제
