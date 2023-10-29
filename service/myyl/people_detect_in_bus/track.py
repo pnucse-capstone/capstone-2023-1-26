@@ -375,8 +375,20 @@ def detect(opt):
 
                         c = int(cls)  # integer class
                         label = f'{id} {names[c]} {conf:.2f}'
-                        annotator.box_label(
-                            bboxes, label, color=colors(c, True))
+
+                        # 인원수 카운트되면 바운딩 박스 색상 변경
+                        if names[c] == 'head':
+                            if id not in countIds:
+                                annotator.box_label(bboxes, label, color=(153, 255, 153))
+                            else:
+                                annotator.box_label(bboxes, label, color=(0, 255, 0))
+
+                        # 넘어짐 감지되면 바운딩 박스 색상 변경
+                        if names[c] == 'person':
+                            if id not in fallIds:
+                                annotator.box_label(bboxes, label, color=(204, 204, 255))
+                            else:
+                                annotator.box_label(bboxes, label, color=(0, 0, 255))
 
                         if save_txt:
                             # to MOT format
