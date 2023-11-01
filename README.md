@@ -45,6 +45,7 @@ https://github.com/seasameoil
 - 기반으로 한 혼잡도 계산 방법 구현
 
 ## 시연 영상
+https://www.youtube.com/watch?v=_uKhF7eF_cQ&list=PLFUP9jG-TDp96chsm66TfMPlAJXIt6Gr9&index=26&t=38s
 
 ## 설치 방법
 1. python을 설치 (v3.6 ~ v3.8)
