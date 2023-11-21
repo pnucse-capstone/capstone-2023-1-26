@@ -83,12 +83,12 @@ BUSNUM = 101 (bus num you interest)
 ```python
 version 1
 1. RTSP
-$ python track.py --source rtsp:your_rtsp_address
+$ python track.py --source rtsp:your_rtsp_address [--show-vid]
 2. *.mp4
-$ python track.py --source video.mp4
+$ python track.py --source video.mp4 [--show-vid]
 
 verison 2 - default embeded video
-$ python track_.py
+$ python track_.py [--show-vid]
 ```
 ### 모니터링 서비스  
 
@@ -115,12 +115,12 @@ $ python manage.py runserver
 ```python
 version 1
 1. RTSP
-$ python track.py --source rtsp:your_rtsp_address --device deviceNum
+$ python track.py --source rtsp:your_rtsp_address --device deviceNum [--show-vid]
 2. *.mp4
-$ python track.py --source video.mp4 --device deviceNum
+$ python track.py --source video.mp4 --device deviceNum [--show-vid]
 
 version 2 - default embeded video
-$ python track_.py 
+$ python track_.py [--show-vid]
 ```
 
 ### 예상 문제
