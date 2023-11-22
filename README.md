@@ -15,12 +15,18 @@
 > 이를 해결하기 위해 교통카드 태그 방식이 아닌 **기본적으로 버스 내부에 설치된 CCTV를 활용**하여 혼잡도를 측정하고, **실시간으로 사고에 대한 모니터링**을 제공하기 위해 이 시스템을 개발하였다.
 
 ## 시스템 구성도
-![시스템 구성도](https://github.com/pnucse-capstone/capstone-2023-1-26/assets/100478309/b01d5776-0e0f-4fb8-b591-618572217f6f)  
+<p align="center">
+  <img src="https://github.com/pnucse-capstone/capstone-2023-1-26/assets/100478309/b01d5776-0e0f-4fb8-b591-618572217f6f">
+</p>
+<!-- ![시스템 구성도](https://github.com/pnucse-capstone/capstone-2023-1-26/assets/100478309/b01d5776-0e0f-4fb8-b591-618572217f6f)   -->
 
 Jetson에서 RTSP(Real Time Streaming Protocol)를 이용하여 실시간으로 하나의 버스 내부 3개의 CCTV영상을 받아온다. 영상은 입구, 출구와 내부 영상이 존재하고 각각은 승차 인원 측정, 하차 인원 측정 그리고 사고 감지에 사용된다.
 
 **승차/하차 인원수 측정**: YOLOv5와 DeepSORT를 활용하여 승차 또는 하차하는 승객의 인원수를 측정하고 MQTT 프로토콜을 이용하여 전송한다. 클라이언트는 버스 번호로 구분된 토픽을 구독하여 각 버스에 대한 승차 또는 하차 인원수와 사고 발생에 대한 정보를 얻을 수 있습니다.  
-![Topic구성](https://github.com/pnucse-capstone/capstone-2023-1-26/assets/100478309/92be4094-012b-4001-b513-2969dffbb1d7)
+<p align="center">
+  <img src="https://github.com/pnucse-capstone/capstone-2023-1-26/assets/100478309/92be4094-012b-4001-b513-2969dffbb1d7">
+</p>
+<!-- ![Topic구성](https://github.com/pnucse-capstone/capstone-2023-1-26/assets/100478309/92be4094-012b-4001-b513-2969dffbb1d7) -->
 
 **넘어짐 감지**: YOLOv5와 DeepSORT를 활용하여 넘어짐을 감지하고 넘어짐 감지 시, HLS프로토콜을 이용한 .m3u8파일과 .ts파일을 5초 간격으로 생성합니다. 사고 이후 총 30초의 영상을 생성합니다. 관리자가 사고 사실을 인지하고 실시간으로 영상을 확인할 수 있습니다.
 
